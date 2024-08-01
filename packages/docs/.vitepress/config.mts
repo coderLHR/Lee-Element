@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Lee-Element",
   description: "vue3 组件库",
-  base: '/lee-element/',
+  base: '/Lee-Element/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
