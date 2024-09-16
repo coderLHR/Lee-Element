@@ -1,21 +1,15 @@
 {
   "name": "@lee-element/components",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private":true,
+  "main": "index.ts",
   "scripts": {
-    "test": "vitest --coverage"
+    "test": "cross-env NODE_ENV=test pnpm --filter @eric-ui/hooks build && vitest --coverage"
+  },
+  "devDependencies": {
+    "axios": "^1.6.8"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@vitest/coverage-v8": "^1.4.0",
-    "@vue/test-utils": "^2.4.5",
-    "jsdom": "^24.0.0"
-  },
-  "dependencies": {
-    "@popperjs/core": "^2.11.8",
-    "async-validator": "^4.2.5"
-  }
+  "license": "ISC"
 }
