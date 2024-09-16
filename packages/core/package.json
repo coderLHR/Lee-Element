@@ -1,6 +1,6 @@
 {
   "name": "lee-element",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Components library by Vue3 + Ts",
   "type": "module",
   "files": [
@@ -32,7 +32,7 @@
     "build-es:watch": "vite build --watch --config build/vite.es.config.ts",
     "build-umd:watch": "vite build --watch --config build/vite.umd.config.ts",
     "clean": "rimraf dist",
-    "release":"release-it"
+    "release": "release-it"
   },
   "keywords": [],
   "author": "coderLee",
