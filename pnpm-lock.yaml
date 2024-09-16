@@ -20,6 +20,9 @@ importers:
       '@lee-element/components':
         specifier: workspace:*
         version: link:packages/components
+      '@lee-element/constants':
+        specifier: workspace:*
+        version: link:packages/constants
       '@lee-element/hooks':
         specifier: workspace:*
         version: link:packages/hooks
@@ -140,6 +143,8 @@ importers:
       axios:
         specifier: ^1.6.8
         version: 1.7.7
+
+  packages/constants: {}
 
   packages/core:
     dependencies:

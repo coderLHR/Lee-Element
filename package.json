@@ -51,6 +51,7 @@
     "@lee-element/hooks": "workspace:*",
     "@lee-element/theme": "workspace:*",
     "@lee-element/utils": "workspace:*",
+    "@lee-element/constants": "workspace:*",
     "@lee-element/vite-plugins": "workspace:*",
     "@popperjs/core": "^2.11.8",
     "async-validator": "^4.2.5",
