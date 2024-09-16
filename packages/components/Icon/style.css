@@ -1,0 +1,17 @@
+.lee-icon {
+    --lee-icon-color: inherit;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    fill: currentColor;
+    color: var(--lee-icon-color);
+    font-size: inherit;
+  }
+  
+  @each $val in primary, info, success, warning, danger {
+    .lee-icon--$(val) {
+      --lee-icon-color: var(--lee-color-$(val));
+    }
+  }
+  

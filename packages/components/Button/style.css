@@ -1,0 +1,200 @@
+.lee-button-group {
+    --lee-button-group-border-color: var(--lee-border-color-lighter);
+  }
+  .lee-button {
+    --lee-button-font-weight: var(--lee-font-weight-primary);
+    --lee-button-border-color: var(--lee-border-color);
+    --lee-button-bg-color: var(--lee-fill-color-blank);
+    --lee-button-text-color: var(--lee-text-color-regular);
+    --lee-button-disabled-text-color: var(--lee-disabled-text-color);
+    --lee-button-disabled-bg-color: var(--lee-fill-color-blank);
+    --lee-button-disabled-border-color: var(--lee-border-color-light);
+    --lee-button-hover-text-color: var(--lee-color-primary);
+    --lee-button-hover-bg-color: var(--lee-color-primary-light-9);
+    --lee-button-hover-border-color: var(--lee-color-primary-light-7);
+    --lee-button-active-text-color: var(--lee-button-hover-text-color);
+    --lee-button-active-border-color: var(--lee-color-primary);
+    --lee-button-active-bg-color: var(--lee-button-hover-bg-color);
+    --lee-button-outline-color: var(--lee-color-primary-light-5);
+    --lee-button-active-color: var(--lee-text-color-primary);
+  }
+  
+  .lee-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    height: 32px;
+    white-space: nowrap;
+    cursor: pointer;
+    color: var(--lee-button-text-color);
+    text-align: center;
+    box-sizing: border-box;
+    outline: none;
+    transition: 0.1s;
+    font-weight: var(--lee-button-font-weight);
+    user-select: none;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    background-color: var(--lee-button-bg-color);
+    border: var(--lee-border);
+    border-color: var(--lee-button-border-color);
+    padding: 8px 15px;
+    font-size: var(--lee-font-size-base);
+    border-radius: var(--lee-border-radius-base);
+    & + & {
+      margin-left: 12px;
+    }
+    &:hover,
+    &:focus {
+      color: var(--lee-button-hover-text-color);
+      border-color: var(--lee-button-hover-border-color);
+      background-color: var(--lee-button-hover-bg-color);
+      outline: none;
+    }
+    &:active {
+      color: var(--lee-button-active-text-color);
+      border-color: var(--lee-button-active-border-color);
+      background-color: var(--lee-button-active-bg-color);
+      outline: none;
+    }
+    /*plain*/
+    &.is-plain {
+      --lee-button-hover-text-color: var(--lee-color-primary);
+      --lee-button-hover-bg-color: var(--lee-fill-color-blank);
+      --lee-button-hover-border-color: var(--lee-color-primary);
+    }
+    /*round*/
+    &.is-round {
+      border-radius: var(--lee-border-radius-round);
+    }
+    /*circle*/
+    &.is-circle {
+      border-radius: 50%;
+      padding: 8px;
+    }
+    /*disabled*/
+    &.is-loading,
+    &.is-disabled,
+    &.is-disabled:hover,
+    &.is-disabled:focus,
+    &[disabled],
+    &[disabled]:hover,
+    &[disabled]:focus {
+      color: var(--lee-button-disabled-text-color);
+      cursor: not-allowed;
+      background-image: none;
+      background-color: var(--lee-button-disabled-bg-color);
+      border-color: var(--lee-button-disabled-border-color);
+    }
+    [class*='lee-icon'] {
+      width: 1em;
+      height: 1em;
+    }
+  }
+  @each $val in primary, success, warning, info, danger {
+    .lee-button--$(val) {
+      --lee-button-text-color: var(--lee-color-white);
+      --lee-button-bg-color: var(--lee-color-$(val));
+      --lee-button-border-color: var(--lee-color-$(val));
+      --lee-button-outline-color: var(--lee-color-$(val)-light-5);
+      --lee-button-active-color: var(--lee-color-$(val)-dark-2);
+      --lee-button-hover-text-color: var(--lee-color-white);
+      --lee-button-hover-bg-color: var(--lee-color-$(val)-light-3);
+      --lee-button-hover-border-color: var(--lee-color-$(val)-light-3);
+      --lee-button-active-bg-color: var(--lee-color-$(val)-dark-2);
+      --lee-button-active-border-color: var(--lee-color-$(val)-dark-2);
+      --lee-button-disabled-text-color: var(--lee-color-white);
+      --lee-button-disabled-bg-color: var(--lee-color-$(val)-light-5);
+      --lee-button-disabled-border-color: var(--lee-color-$(val)-light-5);
+    }
+    .lee-button--$(val).is-plain {
+      --lee-button-text-color: var(--lee-color-$(val));
+      --lee-button-bg-color: var(--lee-color-$(val)-light-9);
+      --lee-button-border-color: var(--lee-color-$(val)-light-5);
+      --lee-button-hover-text-color: var(--lee-color-white);
+      --lee-button-hover-bg-color: var(--lee-color-$(val));
+      --lee-button-hover-border-color: var(--lee-color-$(val));
+      --lee-button-active-text-color: var(--lee-color-white);
+  
+      --lee-button-disabled-text-color: var(--lee-color-$(val)-light-5);
+      --lee-button-disabled-bg-color: var(--lee-color-$(val)-light-9);
+      --lee-button-disabled-border-color: var(--lee-color-$(val)-light-8);
+    }
+  }
+  .lee-button--large {
+    --lee-button-size: 40px;
+    height: var(--lee-button-size);
+    padding: 12px 19px;
+    font-size: var(--lee-font-size-base);
+    border-radius: var(--lee-border-radius-base);
+    /*circle*/
+    &.is-circle {
+      border-radius: 50%;
+      padding: 12px;
+    }
+  }
+  .lee-button--small {
+    --lee-button-size: 24px;
+    height: var(--lee-button-size);
+    padding: 5px 11px;
+    font-size: 12px;
+    border-radius: calc(var(--lee-border-radius-base) - 1px);
+    /*circle*/
+    &.is-circle {
+      border-radius: 50%;
+      padding: 5px;
+    }
+    [class*='lee-icon'] {
+      width: 12px;
+      height: 12px;
+    }
+  }
+  
+  .lee-button-group {
+    display: inline-block;
+    vertical-align: middle;
+  
+    &::after {
+      clear: both;
+    }
+    & > :deep(.lee-button){
+      float: left;
+      position: relative;
+      margin-left: 0;
+      &:first-child{
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right-color: var(--lee-button-group-border-color);
+      }
+      &:last-child{
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0; 
+        border-left-color: var(--lee-button-group-border-color);
+      }
+      &:not(:first-child):not(:last-child) {
+        border-radius: 0;
+  
+        border-left-color: var(--lee-button-group-border-color);
+        border-right-color: var(--lee-button-group-border-color);
+      }
+      &:not(:last-child) {
+        margin-right: -1px;
+      }
+      &:first-child:last-child {
+        border-top-right-radius: var(--lee-border-radius-base);
+        border-bottom-right-radius: var(--lee-border-radius-base);
+        border-top-left-radius: var(--lee-border-radius-base);
+        border-bottom-left-radius: var(--lee-border-radius-base);
+  
+        &.is-round {
+          border-radius: var(--lee-border-radius-round);
+        }
+  
+        &.is-circle {
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+  

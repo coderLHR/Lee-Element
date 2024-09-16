@@ -1,1 +1,67 @@
-@import "./reset.css"
+@import './reset.css';
+
+:root {
+  /* colors */
+  --lee-color-white: #ffffff;
+  --lee-color-black: #000000;
+  --colors: (primary: #409eff, success: #67c23a, warning: #e6a23c, danger: #f56c6c, info: #909399);
+  --lee-bg-color: #ffffff;
+  --lee-bg-color-page: #f2f3f5;
+  --lee-bg-color-overlay: #ffffff;
+  --lee-text-color-primary: #303133;
+  --lee-text-color-regular: #606266;
+  --lee-text-color-secondary: #909399;
+  --lee-text-color-placeholder: #a8abb2;
+  --lee-text-color-disabled: #c0c4cc;
+  --lee-border-color: #dcdfe6;
+  --lee-border-color-light: #e4e7ed;
+  --lee-border-color-lighter: #ebeef5;
+  --lee-border-color-extra-light: #f2f6fc;
+  --lee-border-color-dark: #d4d7de;
+  --lee-border-color-darker: #cdd0d6;
+  --lee-fill-color: #f0f2f5;
+  --lee-fill-color-light: #f5f7fa;
+  --lee-fill-color-lighter: #fafafa;
+  --lee-fill-color-extra-light: #fafcff;
+  --lee-fill-color-dark: #ebedf0;
+  --lee-fill-color-darker: #e6e8eb;
+  --lee-fill-color-blank: #ffffff;
+  
+  @each $val, $color in var(--colors) {
+    --lee-color-$(val): $(color);
+    @for $i from 3 to 9 {
+      --lee-color-$(val)-light-$(i): mix(#fff, $(color), 0.$(i));
+    }
+    --lee-color-$(val)-dark-2: mix(#000, $(color), 0.2);
+  }
+
+  /* border */
+  --lee-border-width: 1px;
+  --lee-border-style: solid;
+  --lee-border-color-hover: var(--lee-text-color-disabled);
+  --lee-border: var(--lee-border-width) var(--lee-border-style) var(--lee-border-color);
+  --lee-border-radius-base: 4px;
+  --lee-border-radius-small: 2px;
+  --lee-border-radius-round: 20px;
+  --lee-border-radius-circle: 100%;
+
+  /*font*/
+  --lee-font-size-extra-large: 20px;
+  --lee-font-size-large: 18px;
+  --lee-font-size-medium: 16px;
+  --lee-font-size-base: 14px;
+  --lee-font-size-small: 13px;
+  --lee-font-size-extra-small: 12px;
+  --lee-font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', '\5fae\8f6f\96c5\9ed1', Arial, sans-serif;
+  --lee-font-weight-primary: 500;
+
+  /*disabled*/
+  --lee-disabled-bg-color: var(--lee-fill-color-light);
+  --lee-disabled-text-color: var(--lee-text-color-placeholder);
+  --lee-disabled-border-color: var(--lee-border-color-light);
+
+  /*animation*/
+  --lee-transition-duration: 0.4s;
+  --lee-transition-duration-fast: 0.2s;
+}
