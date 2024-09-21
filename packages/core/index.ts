@@ -1,4 +1,4 @@
-import { makeInstaller } from "@lee-element/utils";
+import  makeInstaller  from "./makeInstaller";
 import components from "./components";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
